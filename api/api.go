@@ -72,7 +72,7 @@ func New(config *config.Config) *api {
 
 	session.SetMode(mgo.Monotonic, true)
 
-	es, err := elastic.NewClient(elastic.SetURL(config.ElasticSearch.URL), elastic.SetSniff(true))
+	es, err := elastic.NewClient(elastic.SetURL(config.ElasticSearch.URL), elastic.SetSniff(false))
 	if err != nil {
 		panic(err)
 	}
